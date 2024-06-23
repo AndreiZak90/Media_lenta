@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: green;
+}
+
+li {
+  list-style-type: none;
+}
+
+.link_rek {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #262626;
+  font-size: 11px;
+  a {
+    color: #262626;
+  }
+}
+
+#root {
+  position: absolute;
+  top: 5vh;
+  left: 1vw;
+  right: 1vw;
+  width: 98vw;
+  height: 90vh;
+  background: white;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.message_field {
+  height: 87%;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 2%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 45px;
+  border: 1px solid black;
+}
+
+.search_input {
+  height: 45px;
+  width: 100%;
+  padding-left: 10px;
+  outline: none;
+}
+
+.voice_and_video {
+  position: absolute;
+  right: 2%;
+  top: 0;
+  height: 45px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+  }
+
+  img:hover {
+    transform: scale(0.9);
+  }
+}
+
+.text_message {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+}
+
+.message_time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.message_value_text {
+  margin: 20px 0;
+}
+
+.modal_Input {
+  position: absolute;
+  z-index: 90;
+  top: 30px;
+  left: 35%;
+  border: 2px solid black;
+  border-radius: 15px;
+  background: #b8b8b8;
+  max-width: 350px;
+  padding: 10px;
+}
+
+.modal_Input_title,
+.modal_Input_text {
+  margin-bottom: 10px;
+}
+
+.modal_Input_value {
+  width: 310px;
+  padding: 4px;
+  outline: none;
+}
+
+.modal_Input_btn {
+  text-align: right;
+  padding: 10px 17px;
+
+  button {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.modal_Input_btn_ok {
+  margin-right: 8px;
+}
