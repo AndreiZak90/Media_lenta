@@ -151,3 +151,11 @@ li {
 .modal_Input_btn_ok {
   margin-right: 8px;
 }
+
+.error_text {
+  color: #b8b8b8;
+}
+
+.error_text_activ {
+  color: red;
+}

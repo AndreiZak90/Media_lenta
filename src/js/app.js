@@ -86,8 +86,12 @@ export default class MediaCard {
     const textTwo = document.createElement("p");
     textTwo.classList.add("modal_Input_text");
     textTwo.textContent = "Широта и долгота через запятую";
+    const textError = document.createElement("p");
+    textError.classList.add("error_text");
+    textError.textContent = "Некоректные данные...";
     box.append(textOne);
     box.append(textTwo);
+    box.append(textError);
     const input = document.createElement("input");
     input.classList.add("modal_Input_value");
     input.type = "text";
@@ -107,9 +111,14 @@ export default class MediaCard {
     page.append(box);
 
     btnOk.addEventListener("click", () => {
-      const newValue = this.valid(input.value);
-      box.remove();
-      this.addTextMassege(pageCont, value, newValue);
+      if (this.valid(input.value) === false) {
+        textError.classList.add("error_text_activ");
+        input.value = "";
+      } else {
+        const newValue = this.dopValid(input.value);
+        box.remove();
+        this.addTextMassege(pageCont, value, newValue);
+      }
     });
   }
 
@@ -125,19 +134,12 @@ export default class MediaCard {
   }
 
   valid(inputValue) {
-    let newValue;
+    return /^[^a-zA-Z]*,[^a-zA-Z]*$/.test(inputValue);
+  }
 
-    newValue = inputValue.split(",");
+  dopValid(inputValue) {
+    let valueDel = inputValue.split(",");
 
-    let one = newValue[0];
-    let two = newValue[1];
-
-    if (!two.startsWith(" ")) {
-      two = " " + two;
-    }
-
-    let newValue2 = "[" + one + "," + two + "]";
-
-    return newValue2;
+    return `[${valueDel[0]}, ${valueDel[1]}]`;
   }
 }
